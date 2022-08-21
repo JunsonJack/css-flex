@@ -1,0 +1,362 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background-color: #f2f2f2;
+    /* background: #f2f2f2; */
+    overflow-x: hidden;
+    /* 背景透明 */
+    -webkit-tap-highlight-color: transparent;
+    /* height: 2000px; */
+}
+
+a {
+    /* 去掉链接下划线 */
+    text-decoration: none;
+    color: #222;
+}
+
+/* 搜索模块 */
+.search-index{
+    display: flex;
+    /* 固定定位以屏幕 */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    /* 兼容老版本 */
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    /* 固定高度 */
+    height: 44px;
+    min-width: 320px;
+    max-width: 540px;
+    /* background-color: pink; */
+    background-color: #F6F6F6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search {
+    position: relative;
+    height: 26px;
+    /* 行高24 有边框2px */
+    line-height: 24px;
+    border: 1px solid #ccc;
+    flex: 1;
+    font-size: 12px;
+    color: #666;
+    margin: 7px 10px;
+    padding-left: 25px;
+    border-radius: 5px;
+}
+
+/* 搜索放大镜图标 */
+.search::before {
+    content: "";
+    /* display: block; */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+    /* margin: 5px; */
+}
+
+.user{
+    width: 44px;
+    height: 44px;
+    /* background-color: purple; */
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+/* 精灵图 美工一般是给2倍图*/
+.user::before{
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+
+}
+
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li {
+    /* 每个li占一份 */
+    flex: 1;
+}
+
+.local-nav a{
+    display: flex;
+    flex-direction: column;
+    /* 侧轴居中对齐 */
+    align-items: center;
+    font-size: 12px;
+}
+
+/* 使用属性选择器 */
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    /* 一定要加背景色 */
+    background-color: pink;
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+nav {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+
+}
+.nav-common {
+    display: flex;
+    height: 88px;
+    background-color: pink;
+}
+/* 给第二个盒子 上下边距 */
+.nav-common:nth-child(2){
+    margin: 3px 0;
+}
+.nav-items{
+    flex: 1;
+    /* 这里flex不冲突 孩子作为父亲 */
+    display: flex;
+    flex-direction: column;
+}
+/* 主导航栏 链接文字 */
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 2);
+}
+/* 给第一个孩子加上边框 */
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+/* 美工提供的是三倍图，要缩小三倍 */
+.nav-items:nth-child(1) a {
+    border: 0;
+    /* 靠底端居中对齐 */
+    /* background: url(../images/hotel.png) no-repeat bottom center; */
+    /* background-size: 121px auto; */
+}
+/* 主导航栏 酒店图片 */
+.nav-common:nth-child(1) .nav-items:nth-child(1) a{
+    background: url(../images/sprite.png) no-repeat 50px -260px;
+    background-size: 220px auto;
+}
+
+/* 主导航栏 机票图片 */
+.nav-common:nth-child(2) .nav-items:nth-child(1) a{
+    background: url(../images/sprite.png) no-repeat 50px -600px;
+    background-size: 220px auto;
+}
+/* 主导航栏 旅游图片 */
+.nav-common:nth-child(3) .nav-items:nth-child(1) a{
+    background: url(../images/sprite.png) no-repeat 50px -490px;
+    background-size: 220px auto;
+}
+
+
+
+
+/* 给前两个盒子加上边框  这里不选择margin*/
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+/* 加入背景线性渐变 */
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left,#FA5A55,#fa9940);
+}
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left,#4b90ed,#53bbed);
+}
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left,#35c2a8,#6bd458);
+}
+
+/* 侧导航栏 */
+.subnav-entry{
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+}
+
+.subnav-entry li {
+    padding-top: 4px;
+    /* 里面的盒子可以写% 相对于父级来说的 */
+    flex: 20%;
+}
+/* 侧边导航栏链接a */
+.subnav-entry li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+/* 测导航栏icon */
+.subnav-entry li [class^="subnav-entry-icon"]  {
+    width: 28px;
+    height: 28px;
+    background-color: pink;
+    background: url(../images/subnav-bg.png) no-repeat 0 4px;
+    background-size: 24px auto;
+}
+
+.subnav-entry li .subnav-entry-icon-icon2 {
+    background-position: 2px -23px;
+}
+.subnav-entry li .subnav-entry-icon-icon3 {
+    background-position: 0px -50px;
+}
+.subnav-entry li .subnav-entry-icon-icon4 {
+    background-position: 0px -270px;
+}
+.subnav-entry li .subnav-entry-icon-icon5 {
+    background-position: 0px -85px;
+}
+.subnav-entry li .subnav-entry-icon-icon6 {
+    background-position: 4px -136px;
+}
+.subnav-entry li .subnav-entry-icon-icon7 {
+    background-position: 0px -162px;
+}
+.subnav-entry li .subnav-entry-icon-icon8 {
+    background-position: 3px -110px;
+}
+.subnav-entry li .subnav-entry-icon-icon9 {
+    background-position: 0px -195px;
+}
+.subnav-entry li .subnav-entry-icon-icon10 {
+    background-position: 3px -245px;
+}
+
+/* 销售模块 */
+.sales-box {
+    margin-top: 8px;
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    
+    
+}
+.sales-hd {
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.sales-hd h2 {
+    /* SEO优化 把h2隐藏=移出显示区域 (缩进）
+    1.淘宝做法：text-indent: -999px;
+    2.京东做法：font-size:0;
+    */
+    text-indent: -999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sales-hd h2::after {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background:url(../images/hot.png) no-repeat 0 -15px;
+    background-size: 75px auto;
+}
+
+.more{
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    background: -webkit-linear-gradient(left,#FF506C,#FF6BC6);
+    border-radius: 8px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}   
+
+/* 更多福利  旋转三角——| 变成 >*/
+.more::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    /* 旋转45度 */
+    transform: rotate(45deg);
+
+}
+
+.row{
+    display: flex;
+
+}
+
+.row a {
+    flex: 1;
+    border: 1px solid #eee;
+}
+
+.row a:nth-child(1){
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    width: 100%;
+}
